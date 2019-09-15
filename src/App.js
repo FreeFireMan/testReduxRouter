@@ -1,21 +1,28 @@
 import React from 'react';
 import './App.css';
-import {connect} from 'react-redux';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SideBarView from "./components/SideBar";
+import CardHolder from "./components/CardHolder";
 
-function App() {
-  return (
-    <div id="wrapper" className="container" >
-      <Header/>
-      <Footer/>
-    </div>
-  );
-}
 
-const mapStateToProps = ({tree_data}) =>{
-    return{
-        tree_data
+class App extends React.Component {
+
+    render() {
+        return (
+            <div id="wrapper" className="container">
+                <Header/>
+                <div>
+                    <div id="category" className="row">
+                            <SideBarView/>
+                        <div id="featured" className="col-md-9">
+                            <CardHolder/>
+                        </div>
+                    </div>
+                </div>
+                <Footer/>
+            </div>
+        );
     }
 }
-export default connect(mapStateToProps)(App);
+export default App

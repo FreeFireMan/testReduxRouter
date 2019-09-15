@@ -1,19 +1,16 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import './Header.css'
 import logoch from "./logo-ch.svg"
 import logolego from "./logolego.svg.png"
 
 class Header extends Component {
     render() {
-        const {tree_data} = this.props;
-        console.log(tree_data)
         return (
             <div>
                 <div id="header" className="row">
                     {/*Start logos Bar*/}
-                    <div id="logo" className="col-md-2"><div className="well"><Link to="/"><img src={logoch} height="50px" alt="ContentCH" /></Link></div></div>
+                    <div id="logo" className="col-md-2"><div className="well"><NavLink to="/"><img src={logoch} height="50px" alt="ContentCH" /></NavLink></div></div>
                     <div id="header-content" className="col-md-4"><div className="well"></div></div>
                     <div id="logo" className="col-md-2"><div className="well"><img src={logolego} height="50px" alt=""/></div></div>
                     <div id="header-content" className="col-md-4"><div className="well"></div></div>
@@ -28,7 +25,7 @@ class Header extends Component {
                                 <a className="nav-link" href="#">Статус контента</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Личный кабинет</a>
+                                <NavLink className="nav-link" to="\lk">Личный кабинет</NavLink>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#" tabIndex="-1" aria-disabled="true">Выход</a>
@@ -76,9 +73,4 @@ class Header extends Component {
     }
 }
 
-const mapStateToProps = ({tree_data}) =>{
-    return{
-        tree_data
-    }
-}
-export default connect(mapStateToProps)(Header);
+export default Header;
