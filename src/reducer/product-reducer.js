@@ -22,7 +22,10 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 pendingProduct: false,
-                product: action.payload
+                product: action.payload.content,
+                totalPages: action.payload.page.totalPages,
+                currentPage: action.payload.page.number + 1,
+
             }
         case FETCH_PRODUCT_ERROR:
             return {

@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideBarView from "./components/SideBar";
-import CardHolder from "./components/CardHolder";
+import ProductView from "./components/ProductView";
 
 
 class App extends React.Component {
@@ -16,7 +16,7 @@ class App extends React.Component {
                     <div id="category" className="row">
                             <SideBarView/>
                         <div id="featured" className="col-md-9">
-                            <CardHolder/>
+                            <ProductView/>
                         </div>
                     </div>
                 </div>
